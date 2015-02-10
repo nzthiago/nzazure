@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "[Your-Website-name]",
+            "location": "East US"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "[Your-db-name]",
+                "serverName": "",
+                "user": "[Your-db-username]",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "[Your-db-location]"
+            }
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22310.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz", "GeekQuiz\GeekQuiz.csproj", "{3AC02C9F-8146-425A-98D2-597D4E679DF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{352B3A2F-112E-4294-9A9A-19E60EEE19CB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{D633B356-0120-425A-A439-7205CFBFC495}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\GeekQuiz-WAWS-dev.json = PublishScripts\Configurations\GeekQuiz-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC02C9F-8146-425A-98D2-597D4E679DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC02C9F-8146-425A-98D2-597D4E679DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC02C9F-8146-425A-98D2-597D4E679DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC02C9F-8146-425A-98D2-597D4E679DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D633B356-0120-425A-A439-7205CFBFC495} = {352B3A2F-112E-4294-9A9A-19E60EEE19CB}
+	EndGlobalSection
+EndGlobal

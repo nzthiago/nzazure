@@ -1,64 +1,46 @@
-﻿Setting up your environment for the labs
+Setting up your environment for the labs
 ========================================
 In this lab you will find the prerequisites and steps to help you set up your computer. After completing the lab you will have a working environment, ready for the other labs.
 
-Configure your computer
+
+If not using your own Windows computer: Create an Azure Virtual Machine
+-----------------------
+### Create a new Visual Studio 2015 Preview Virtual Machine
+If you don't have a computer running windows with Visual Studio 2013 or 2015 installed, it is faster and easier to create a new VM on your Azure subscription, and use that VM to complete the labs.
+
+At this stage you should have an Azure subscription - if not please talk to your instructor first before continuing.
+
+Follow these instructions to create the Visual Studio 2015 Preview virtual machine:
+
+1. Log in to the ([Azure management portal with your credentials](http://manage.windowsazure.com/))
+1. From the bottom of the portal, go to **New > Compute > Virtual Machine > From Gallery**
+
+![New > Compute > Virtual Machine > From Gallery](images/gallery.png?raw=true)
+
+1. From the image menu on the left, select Visual Studio, and then select the **Visual Studio Ultimate 2015 Preview** image
+
+![Visual Studio Ultimate 2015 Preview](images/visual-studio-image.png?raw=true)
+
+1. On the **'Virtual machine configuration**' page, select a **Standard D2** machine size and choose a user name and password that you will remember then click next
+
+![Virtual Machine Configuration](images/vm-configuration.png?raw=true)
+
+1. On the next '**Virtual machine configuration**' page, choose one of the Australia regions if they are available, otherwise either West US or Southeast Asia will work, then click next
+
+![Virtual Machine Configuration](images/vm-configuration2.png?raw=true)
+
+1. On the next page click the **checkbox button** to start creating the virtual machine.
+1. It can take 5 to 10 minutes for the VM to be created. Once it is ready it will show with a status of '**Running**'.
+1. Once the status of the VM is '**Running**' for a couple of minutes, select it and click **Connect** at the bottom and you'll be able to remote desktop into your shiny new VM.
+
+
+
+Configure your computer (perform these actions from inside the VM you created one above)
 -----------------------
 
-### Install Visual Studio Ultimate 2015 Preview
-To run these Introduction to Microsoft Azure labs, **Visual Studio 2015 Preview** is required. It can be downloaded and installed from [here](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx).
+### Download content of this GitHub repository (optional but recommended)
 
-Alternatively, you can use Visual Studio 2013, provided the following have been installed:
-
-* Visual Studio 2013 Update 3 (or higher) ([download](http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs)).
-
-* Azure SDK for Visual Studio 2013 ([download](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)).
-
-	> **Note 1:** Depending on how many of the SDK dependencies you already have on your machine, installing the SDK could take a long time, from several minutes to a half hour or more.
-
-    > **Note 2:** While not required to complete this lab, the [Web Essentials](http://vswebessentials.com/download) extension for Visual Studio improves the HTML and JavaScript editing experience by adding in features like missing Angular attribute detection and improved JavaScript IntelliSense.
-
-	> **Note 3:** Visual Studio is only required if you will be executing the [Get started with Azure Websites and ASP.NET](../get-started-with-websites-and-asp-net), [Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js using Azure Active Directory to log in users](../build-single-page-app-with-webapi-and-angular) or [Build a web application with ASP.NET MVC using DocumentDB](../build-web-app-using-documentdb) labs.
-
-### Install Azure SDK for .Net ###
-The Microsoft Azure SDK for .Net is available through the [Microsoft Web Platform Installer](http://www.microsoft.com/web/downloads/platform.aspx). For the purposes of this lab you need version 2.3 or higher.
-
-To do so, follow these instructions:
-
-1. Open Microsoft Web Platform Installer.
-1. Find the row for **Microsoft Azure SDK for .Net** corresponding to the version of Visual Studio you have installed.  Click the **Add** button. 
-1. Click **Install**.
-
-![Install Microsoft Azure SDK for .Net](images/install-microsoft-azure-sdk-for-net.png?raw=true)
-
-_Install Microsoft Azure SDK for .Net for your version of Visual Studio_
-
-> **Note:** Azure SDK for .Net is only required if you will be executing the [Get started with Azure Websites and ASP.NET](../get-started-with-websites-and-asp-net), [Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js using Azure Active Directory to log in users](../build-single-page-app-with-webapi-and-angular) or [Build a web application with ASP.NET MVC using DocumentDB](../build-web-app-using-documentdb) labs.
-
-####Install Windows PowerShell
-Windows 8 comes with version 3.0 of PowerShell installed, but that may not be the case in other (previous) versions of Windows. You can check whether PowerShell is installed and if the version will work for the purposes of this lab by following these steps:
-
-1. From the **Start** screen, begin typing **power**. 
-
-	This returns a scoped list of apps that includes **Windows PowerShell**. If Windows PowerShell does not appear in the search results you can skip the next steps and proceed to installing it using the link provided below.
-
-1. To open the console, click **Windows PowerShell**.
-
-1. Execute the following command:
-
-	````PowerShell
-	$PSVersionTable.PSVersion
-	````
-
-	The execution of this command should return 3.0 or higher. 
-
-	![Verifying Powershell version](images/verifying-powershell-version.png?raw=true)
-
-	_Verifying the Windows PowerShell version_
-
-If **Windows PowerShell** is not installed in your machine or you have an older version, download a newer version from the [Windows PowerShell Scripting](https://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx) page.
-
->**Note:** Windows PowerShell is only required for the [Create Virtual Machine using PowerShell](../create-virtual-machine#creating-a-vm-using-powershell) task of the [Infrastructure As A Service in Microsoft Azure](../create-virtual-machine) lab.
+The labs provided have a combination of text documentation and sample code. In order to have the necessary sample files locally inside your VM, we strongly recommend you to [**download**](https://github.com/Azure-Readiness/HOL-Intro-to-Azure/archive/master.zip) all content in this repository to your VM. This is a zip archive, so make sure to [unblock](http://blogs.msdn.com/b/delay/p/unblockingdownloadedfile.aspx) the zip file before extracting it.
 
 ### Install Microsoft Azure PowerShell Cmdlets
 
@@ -144,11 +126,7 @@ To verify that ensure that you have the **Azure Cross-Platform Command-Line Inte
 	help:      -v, --version  output the application version
 	````
 
-### Clone or download content of this GitHub repository (optional but recommended)
-
-The labs provided have a combination of text documentation and sample code. In order to have all documentation and all necessary sample files locally on your computer, we strongly recommend you to clone (using [Git](http://git-scm.com/)) or [download](https://github.com/Azure-Readiness/HOL-Intro-to-Azure/archive/master.zip) all content in this repository locally on your computer. If you download the zip archive, you will need to [unblock](http://blogs.msdn.com/b/delay/p/unblockingdownloadedfile.aspx) the zip file before extracting it.
-
 Summary
 -------
 
-You have Visual Studio 2015 Preview, or Visual Studio 2013 with Update 3 (or higher) and the _Azure SDK for Visual Studio 2013_, installed on your computer.
+You have Visual Studio 2015 Previewand the _Azure SDK installed on a VM and you are now good to go with the rest of the labs.
